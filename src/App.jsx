@@ -3,8 +3,8 @@ import './App.css'
 import { featured, more } from './data/projects'
 
 const roles = [
-  'GenAI / Data Scientist',
-  'AI Engineer — Multi-Agent Systems',
+  'Senior AI/ML Engineer & AI Architect',
+  '11+ years in production AI/ML',
   'Builder of agents that explain themselves',
 ]
 
@@ -19,9 +19,23 @@ function useRotatingText(words, interval = 2600) {
 
 const skillGroups = [
   { label: 'Languages', items: ['Python', 'JavaScript', 'SQL', 'Bash'] },
-  { label: 'AI / Agents', items: ['LLM orchestration', 'RAG', 'Guardrails & evals', 'STT/TTS pipelines'] },
+  { label: 'AI / Agents', items: ['LLM orchestration', 'RAG', 'Guardrails & evals', 'STT/TTS pipelines', 'LoRA / QLoRA fine-tuning'] },
+  { label: 'ML / Cloud', items: ['PyTorch', 'Azure / Azure OpenAI', 'Databricks', 'Kubernetes'] },
   { label: 'Backend', items: ['FastAPI', 'SQLite', 'PostgreSQL', 'pytest'] },
   { label: 'Tooling', items: ['Docker', 'Git', 'GitHub Actions', 'Linux'] },
+]
+
+const patents = [
+  {
+    id: 'US 12,579,548 B2',
+    date: 'granted Mar 2026',
+    title: 'Method and System for Predicting Likelihood of Return of a Product',
+  },
+  {
+    id: 'US 12,737,336 B2',
+    date: 'granted Sep 2026',
+    title: 'Method and System for Creating a Multimodal & Multilingual Product Catalogue (Hybrid Model)',
+  },
 ]
 
 function Nav() {
@@ -31,6 +45,7 @@ function Nav() {
       <nav>
         <a href="#work">Work</a>
         <a href="#skills">Skills</a>
+        <a href="#patents">Patents</a>
         <a href="#journal">Journal</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -135,6 +150,23 @@ function Skills() {
   )
 }
 
+function Patents() {
+  return (
+    <section id="patents" className="section">
+      <h2>Patents</h2>
+      <ul className="patent-list">
+        {patents.map((p) => (
+          <li key={p.id}>
+            <span className="patent-id">{p.id}</span>
+            <span className="patent-date">{p.date}</span>
+            <span className="patent-title">{p.title}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
 function Journal() {
   return (
     <section id="journal" className="section journal">
@@ -158,7 +190,7 @@ function Contact() {
       <h2>Let's talk</h2>
       <p className="section-sub">Open to conversations about agent systems, voice AI, and GenAI products.</p>
       <div className="contact-links">
-        <a href="mailto:jotheesssivan@gmail.com">jotheesssivan@gmail.com</a>
+        <a href="mailto:snaveenkumaar@gmail.com">snaveenkumaar@gmail.com</a>
         <a href="https://www.linkedin.com/in/naveen-kumaar-/" target="_blank" rel="noreferrer">LinkedIn</a>
         <a href="https://github.com/Naveenkumaar" target="_blank" rel="noreferrer">GitHub</a>
       </div>
@@ -182,6 +214,7 @@ function App() {
         <Hero />
         <Work />
         <Skills />
+        <Patents />
         <Journal />
         <Contact />
       </main>

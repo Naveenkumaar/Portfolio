@@ -320,6 +320,41 @@ a:hover {
   letter-spacing: 0.05em;
 }
 
+.patent-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.patent-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: baseline;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-elev);
+}
+
+.patent-id {
+  font-weight: 700;
+  color: var(--accent-2);
+  font-size: 0.9rem;
+}
+
+.patent-date {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+}
+
+.patent-title {
+  flex-basis: 100%;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
 .journal, .contact {
   text-align: left;
 }
